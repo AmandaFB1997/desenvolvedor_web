@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div id="conteiner-header">
+            <div id="logo"><img src="imagens/comece.png" alt=""></div>
+            <p>Desenvolvedor Web</p>
+            <nav class="menu">
+                <div class="navItens"><a href="#">Itens 1</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+                <div class="navItens"><a href="#">Itens 2</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+                <div class="navItens"><a href="#">Itens 3</a>
+                    <div class="submenu">
+                        <div class="navItens"><a href="#">Sub Item 1</a></div>
+                        <div class="navItens"><a href="#">Sub Item 2</a></div>
+                    </div>
+                </div>
+            </nav>
+            <label onclick="menuResponsive()" for="botão-menu">&#9776</label>
+        </div>
+    </header>
+    <figure id="imageBackground">
+        <div id="textoBackground">
+            <p><strong>Hello</strong>, We Are</p>
+            <p><strong>FACE DESIGN</strong></p>
+            <p>And <strong>Trust Us</strong>, You Want To <strong>Hire Us</strong></p>
+        </div>
+    </figure>
+    <main>
+        <section class="section-services">
+            <div class="conteudo-services">
+                <div class="titulo-services">
+                    <h1>SERVICES</h1>
+                </div>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quos dolorum laudantium ipsum aliquid, quisquam necessitatibus nostrum optio repellendus voluptate nobis dignissimos quae nisi voluptates commodi, tempore, a nam earum?
+                </P>
+                <a class="section-botao"
+                href="#">View More</a>
+            </div>
+            <div class="conteudo-services">
+                <div class="titulo-services">
+                    <img src="imagens/foguete.png" alt="">
+                    <h1>MARKETING</h1>
+                </div>
+                <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, veritatis ratione. Quisquam repudiandae dolores totam aperiam doloremque quos aliquid officiis laborum saepe quis labore dolorum, eos deleniti qui porro iusto.</P>
+            </div>
+            <div class="conteudo-services">
+                <div class="titulo-services">
+                    <img src="imagens/foguete.png" alt="">
+                    <h2>DESIGN</h2>
+                </div>
+                <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat hic reprehenderit nisi nulla obcaecati molestias velit itaque quam praesentium exercitationem blanditiis harum odio, cupiditate et delectus ab aperiam sapiente dolorum?</P>
+            </div>
+    
+            <div class="conteudo-services">
+                <div class="titulo-services"></divclass>
+                        <img src="imagens/foguete.png" alt="">
+                    <h1>DEVELOPMENT</h1>
+                </div>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, expedita quaerat tempora quo itaque minima pariatur eum neque tenetur obcaecati, architecto adipisci sunt nisi facilis corporis quidem odio beatae vitae?
+                </P>
+                </div>    
+        </section>
+    
+        <section class="section-works">
+            <div class="conteudo-works">
+                <h1>WORKS</h1>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quos dolorum laudantium ipsum aliquid, quisquam necessitatibus nostrum optio repellendus voluptate nobis dignissimos quae nisi voluptates commodi, tempore, a nam earum?
+                </P>
+                <a class="section-botao"
+                href="#">View More</a>
+            </div>
+            <div id="works-slide">
+                <div class="works-imagens">
+                    <img src="imagens/avel-chuklanov-DUmFLtMeAbQ-unsplash.jpg" alt="">
+                </div>
+                <div class="works-imagens">
+                    <img src="imagens/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" alt="">
+                </div>
+                <div class="works-imagens">
+                    <img src="imagens/jason-goodman-bzqU01v-G54-unsplash.jpg" alt="">
+                </div>
+                <div class="works-imagens">
+                    <img src="imagens/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg" alt="">
+                </div>
+                <div class="works-imagens">
+                    <img src="imagens/jason-goodman-bzqU01v-G54-unsplash.jpg" alt="">
+                </div>
+                
+            </div>        
+            <div id="botoes">
+                <div id="bt-esq"><</div>
+                <div id="bt-dir">></div>
+            </div>
+        </section>
+
+    </main>
+    <script>
+        function menuResponsive(){
+            var menu = document.querySelector('.menu')
+            menu.classList.toggle('active')
+        }
+         var bt = document.getElementById('bt-esq')
+         bt.addEventListener('click', function(){
+            var slideShow = document.getElementById('works-slide')
+             slideShow.scrollBy(-300,0)
+            
+         })
+
+         var bt = document.getElementById('bt-dir')
+         bt.addEventListener('click', function(){
+            var slideShow = document.getElementById('works-slide')
+             slideShow.scrollBy(-300,0)
+         })  
+
+    </script>
+</body>
+</html>

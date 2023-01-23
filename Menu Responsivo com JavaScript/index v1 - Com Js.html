@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        label[for='botao-menu']{
+            display: none;
+            background-color: #222;
+            color: #aaa;
+            font-size: 30px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        } 
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .navItens{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            background-color: #222;
+            position: relative;          
+        }
+        .navItens > a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            text-transform: uppercase;  
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color:#aaa;
+            height: 30px;
+            width: 100%;
+            padding-bottom: 2px;
+        }
+        .navItens > a:hover{
+            background-color: #f4f4f4;
+            transition:all .4s; /*ok*/
+        }
+        .navItens > a:visited{
+            color: #aaa;
+        }
+        .submenu{
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            /* display: none; */
+            overflow: hidden; /* Essas 3 linhas no lugar do Display none*/
+            max-height: 0;
+            transition: max-height .4s ease-out;
+        }
+        .submenu > .navItens > a{
+            background-color:#069;
+            border-bottom: solid 1px #ccc;
+        }
+        .submenu > .navItens > a:hover{
+            background-color: #f4f4f4;
+            transition:all .4s; /*ok*/
+        }
+        .navItens:hover .submenu{
+            /* display: block; */
+            max-height: 200px;    /* Essas 2 linhas no lugar do Display block*/
+            transition: max-height .4s ease-in;
+        }
+        @media (max-width: 400px){
+            .menu{
+                transition: all .4s; /*ok*/
+                margin-left: -100%;
+                flex-direction: column;
+            }
+            label[for='botao-menu']{
+                display: block;
+            }
+            .active{
+                margin-left: 0px;
+            }
+            .submenu{
+                position: relative;
+            }
+        }
+    </style> 
+</head>
+<body>
+    <label onclick="menuResponsivo()" for="botao-menu">&#9776;</label>
+    <nav class="menu">
+        <div class="navItens"><a href="#">Itens 1</a>
+            <div class="submenu">
+                <div class="navItens"><a href="#">Sub Item 1</a></div>
+                <div class="navItens"><a href="#">Sub Item 2</a></div>
+            </div>
+        </div>
+        <div class="navItens"><a href="#">Itens 2</a>
+            <div class="submenu">
+                <div class="navItens"><a href="#">Sub Item 1</a></div>
+                <div class="navItens"><a href="#">Sub Item 2</a></div>
+            </div>
+        </div>
+        </div>
+        <div class="navItens"><a href="#">Itens 3</a>
+            <div class="submenu">
+                <div class="navItens"><a href="#">Sub Item 1</a></div>
+                <div class="navItens"><a href="#">Sub Item 2</a></div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <script>        
+        function menuResponsivo(){    
+            var menu = document.querySelector('.menu')
+            menu.classList.toggle('active')
+        }
+    </script> 
+</body>
+</html>
